@@ -8,6 +8,7 @@ then
 else
 	gcc --version
 	clang --version
+	clang-4.0 --version
 fi
 
 if [ -n "${CXX}" ]
@@ -17,6 +18,7 @@ then
 else
 	g++ --version
 	clang++ --version
+	clang++-4.0 --version
 fi
 
 echo "checking CPU"
