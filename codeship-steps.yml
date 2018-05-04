@@ -1,0 +1,5 @@
+- name: configure
+  service: ubuntu_16_4
+  command: /root/configure
+ 
+  

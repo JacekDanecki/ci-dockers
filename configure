@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "checking compilers"
+if [ -n "${CC}" ]
+then
+	echo "CC: ${CC}"
+	${CC} --version
+else
+	gcc --version
+	clang --version
+fi
+
+if [ -n "${CXX}" ]
+then
+	echo "CXX: ${CXX}"
+	${CXX} --version
+else
+	g++ --version
+	clang++ --version
+fi
+
+echo "checking CPU"
+lscpu
+
+echo "checking user"
+whoami
+
+echo "checking memory"
+free
+
+echo "checking disk space"
+df -h
+
+echo "environment variables"
+set
