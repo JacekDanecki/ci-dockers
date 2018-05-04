@@ -1,4 +1,4 @@
 - name: build
   service: ubuntu164
-  command: cd /root; ./configure; make && make test
+  command: /root/configure
 
