@@ -49,6 +49,9 @@ then
 	then
 		cat /etc/debian_version
 	fi
+        echo "checking docker"
+	docker info
+
 	echo "building in `pwd`"
 	make && make test
 else
