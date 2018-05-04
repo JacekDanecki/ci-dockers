@@ -36,7 +36,24 @@ df -h
 echo "environment variables"
 set
 
-echo "build"
-cd /root
-make && make test
+if [ "${SHIPPABLE}" = "true" ]
+then
+
+	echo "checking sudo"
+	sudo whoami
+
+	echo "checking OS"
+	lsb_release -a
+	uname -a
+	if [ -f /etc/debian_version ]
+	then
+		cat /etc/debian_version
+	fi
+	echo "building in `pwd`"
+	make && make test
+else
+	echo "building in /root"
+	cd /root
+	make && make test
+fi
 
