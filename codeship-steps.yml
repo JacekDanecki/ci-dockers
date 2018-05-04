@@ -1,5 +1,4 @@
-- name: configure
-  service: ubuntu_16_4
-  command: /root/configure
- 
-  
+- name: build
+  service: ubuntu164
+  command: cd /root; ./configure; make && make test
+
